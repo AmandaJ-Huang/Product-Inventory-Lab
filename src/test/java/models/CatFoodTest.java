@@ -5,6 +5,7 @@ import org.junit.Assert;
 
 public class CatFoodTest {
     private CatFood testCatFood = new CatFood();
+    private CatFood friskies = new CatFood(123, "Friskies", "dry", 10, 3, 30.00);
 
     @Test
     public void setBrandTest() {
@@ -82,5 +83,34 @@ public class CatFoodTest {
 
         //Then
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void constructorTest() {
+        //Given
+        int expectedId = 123;
+        String expectedBrand = "Friskies";
+        String expectedType = "dry";
+        int expectedWeight = 10;
+        int expectedQty = 3;
+        Double expectedPrice = 30.00;
+
+        //When
+        CatFood testFood = new CatFood(expectedId, expectedBrand, expectedType,
+                expectedWeight, expectedQty, expectedPrice);
+        int actualId = testFood.getId();
+        String actualBrand = testFood.getBrand();
+        String actualType = testFood.getType();
+        int actualWeight = testFood.getWeight();
+        int actualQty = testFood.getQty();
+        Double actualPrice = testFood.getPrice();
+
+        //Then
+        Assert.assertEquals(expectedId, actualId);
+        Assert.assertEquals(expectedBrand, actualBrand);
+        Assert.assertEquals(expectedType, actualType);
+        Assert.assertEquals(expectedWeight, actualWeight);
+        Assert.assertEquals(expectedQty, actualQty);
+        Assert.assertEquals(expectedPrice, actualPrice);
     }
 }

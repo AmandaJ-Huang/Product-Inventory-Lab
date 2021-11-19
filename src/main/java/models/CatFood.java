@@ -8,6 +8,19 @@ public class CatFood {
     private int qty;
     private double price;
 
+    public CatFood() {
+
+    }
+
+    public CatFood(int id, String brand, String type, int weight, int qty, double price) {
+        this.id = id;
+        this.brand = brand;
+        this.type = type;
+        this.weight = weight;
+        this.qty = qty;
+        this.price = price;
+    }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
