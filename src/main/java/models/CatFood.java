@@ -4,7 +4,7 @@ public class CatFood {
     private int id;
     private String brand;
     private String type;
-    private int weight;
+    private float weight;
     private int qty;
     private double price;
 
@@ -12,7 +12,7 @@ public class CatFood {
 
     }
 
-    public CatFood(int id, String brand, String type, int weight, int qty, double price) {
+    public CatFood(int id, String brand, String type, float weight, int qty, double price) {
         this.id = id;
         this.brand = brand;
         this.type = type;
@@ -37,11 +37,11 @@ public class CatFood {
         return this.type;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(Float weight) {
         this.weight = weight;
     }
 
-    public Integer getWeight() {
+    public Float getWeight() {
         return this.weight;
     }
 

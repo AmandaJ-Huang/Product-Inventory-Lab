@@ -36,11 +36,11 @@ public class CatFoodTest {
     @Test
     public void setWeightTest() {
         //Given
-        Integer expected = 5;
+        Float expected = 5.2f;
 
         //When
         testCatFood.setWeight(expected);
-        Integer actual = testCatFood.getWeight();
+        Float actual = testCatFood.getWeight();
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -91,7 +91,7 @@ public class CatFoodTest {
         int expectedId = 123;
         String expectedBrand = "Friskies";
         String expectedType = "dry";
-        int expectedWeight = 10;
+        float expectedWeight = 10;
         int expectedQty = 3;
         Double expectedPrice = 30.00;
 
@@ -101,7 +101,7 @@ public class CatFoodTest {
         int actualId = testFood.getId();
         String actualBrand = testFood.getBrand();
         String actualType = testFood.getType();
-        int actualWeight = testFood.getWeight();
+        float actualWeight = testFood.getWeight();
         int actualQty = testFood.getQty();
         Double actualPrice = testFood.getPrice();
 

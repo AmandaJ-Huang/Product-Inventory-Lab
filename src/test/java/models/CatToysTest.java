@@ -9,7 +9,7 @@ public class CatToysTest {
     @Test
     public void setIdTest() {
         //Given
-        Integer expected = 161199;
+        Integer expected = 28697;
 
         //When
         testCatToys.setId(expected);
@@ -61,7 +61,7 @@ public class CatToysTest {
     @Test
     public void constructorTest() {
         //Given
-        Integer expectedId = 161807;
+        Integer expectedId = 9375;
         String expectedType = "springs";
         Character expectedSize = 'M';
         Double expectedPrice = 3.48;
