@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CatFoodServiceTest {
+    private CatFoodService catFoodService = new CatFoodService();
 
     @Test
     public void createTest() {
@@ -17,7 +18,6 @@ public class CatFoodServiceTest {
         Double expectedPrice = 18.00;
 
         //When
-        CatFoodService catFoodService = new CatFoodService();
         CatFood testCatFood = catFoodService.create(expectedBrand, expectedType,
                 expectedWeight, expectedQty, expectedPrice);
 
@@ -46,7 +46,6 @@ public class CatFoodServiceTest {
         Double expectedPrice = 18.00;
 
         //When
-        CatFoodService catFoodService = new CatFoodService();
         CatFood testCatFood = catFoodService.create(expectedBrand, expectedType,
                 expectedWeight, expectedQty, expectedPrice);
         CatFood actual = catFoodService.findCatFood(expectedId);
@@ -58,7 +57,6 @@ public class CatFoodServiceTest {
     @Test
     public void findAllTest() {
         //Given
-        CatFoodService catFoodService = new CatFoodService();
         CatFood purinaFood = catFoodService.create("purina", "wet",
                 2.5f, 12, 12.00);
         CatFood friskiesFood = catFoodService.create("friskies", "dry",
@@ -75,11 +73,10 @@ public class CatFoodServiceTest {
         Assert.assertArrayEquals(expected, actual);
     }
 
-    //Why does test not pass when all tests are run?
+    //Why does test not pass when all tests are run? Garbage collection?
     @Test
     public void deleteTest() {
         //Given
-        CatFoodService catFoodService = new CatFoodService();
         CatFood purinaFood = catFoodService.create("purina", "wet",
                 2.5f, 12, 12.00);
         CatFood friskiesFood = catFoodService.create("friskies", "dry",

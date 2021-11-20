@@ -1,5 +1,6 @@
 package models;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
 
@@ -109,7 +110,7 @@ public class CatFoodTest {
         Assert.assertEquals(expectedId, actualId);
         Assert.assertEquals(expectedBrand, actualBrand);
         Assert.assertEquals(expectedType, actualType);
-        Assert.assertEquals(expectedWeight, actualWeight);
+        Assertions.assertEquals(expectedWeight, actualWeight);
         Assert.assertEquals(expectedQty, actualQty);
         Assert.assertEquals(expectedPrice, actualPrice);
     }
