@@ -30,9 +30,9 @@ public class CatToyService {
     }
 
     public Boolean delete(int id) {
-        for (CatToys catToys : inventory) {
-            if (catToys.getId().equals(id)) {
-                inventory.remove(id);
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).getId().equals(id)) {
+                inventory.remove(i);
                 return true;
             }
         }

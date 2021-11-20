@@ -16,7 +16,7 @@ public class CatToyServiceTest {
         Double expectedPrice = 3.48;
 
         //When
-        CatToys testCatToys = catToyService.create(expectedType, expectedSize, expectedPrice);
+        CatToys testCatToys = catToyService.create(expectedType, expectedSize, expectedPrice); //1
         String actualType = testCatToys.getType();
         Character actualSize = testCatToys.getSize();
         Double actualPrice = testCatToys.getPrice();
@@ -33,8 +33,8 @@ public class CatToyServiceTest {
         Integer expectedId = 2;
 
         //When
-        CatToys testCatToy = catToyService.create("tracks", 'M', 8.79);
-        CatToys testCatToy1 = catToyService.create("mouse", 'S', 1.50);
+        CatToys testCatToy = catToyService.create("tracks", 'M', 8.79); //2
+        CatToys testCatToy1 = catToyService.create("mouse", 'S', 1.50); //3
         CatToys actual = catToyService.findCatToy(expectedId);
 
         //Then
@@ -44,8 +44,8 @@ public class CatToyServiceTest {
     @Test
     public void findAllTest() {
         //Given
-        CatToys tracksToy = catToyService.create("tracks", 'M', 8.79);
-        CatToys mouseToy = catToyService.create("mouse", 'S', 1.50);
+        CatToys tracksToy = catToyService.create("tracks", 'M', 8.79); //4
+        CatToys mouseToy = catToyService.create("mouse", 'S', 1.50); //5
 
         CatToys[] expected = {tracksToy, mouseToy};
 
@@ -59,10 +59,10 @@ public class CatToyServiceTest {
     @Test
     public void deleteTest() {
         //Given
-        CatToys tracksToy = catToyService.create("tracks", 'M', 8.79);
-        CatToys mouseToy = catToyService.create("mouse", 'S', 1.50);
+        catToyService.create("tracks", 'M', 8.79); //6
+        catToyService.create("mouse", 'S', 1.50); //7
 
-        int id = 1;
+        int id = 6;
         Boolean expected = true;
 
         //When

@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 public class CatFoodServiceTest {
     private CatFoodService catFoodService = new CatFoodService();
 
@@ -73,22 +75,25 @@ public class CatFoodServiceTest {
         Assert.assertArrayEquals(expected, actual);
     }
 
-    //Why does test not pass when all tests are run? Garbage collection?
     @Test
     public void deleteTest() {
         //Given
-        CatFood purinaFood = catFoodService.create("purina", "wet",
+        catFoodService.create("purina", "wet",
                 2.5f, 12, 12.00);
-        CatFood friskiesFood = catFoodService.create("friskies", "dry",
+        catFoodService.create("friskies", "dry",
                 1.8f, 36, 21.00);
-        CatFood iamsFood = catFoodService.create("iams", "grain-free dry",
+        catFoodService.create("iams", "grain-free dry",
                 12.4f, 1, 35.50);
 
-        int id = 2;
+        System.out.println(Arrays.toString(catFoodService.findAll()));
+
+        int id = 7;
         Boolean expected = true;
 
         //When
         Boolean actual = catFoodService.delete(id);
+        System.out.println(actual);
+        System.out.println(Arrays.toString(catFoodService.findAll()));
 
         //Then
         Assert.assertEquals(expected, actual);

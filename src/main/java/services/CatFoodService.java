@@ -36,9 +36,9 @@ public class CatFoodService {
     }
 
     public Boolean delete(int id) {
-        for (CatFood catFood : inventory) {
-            if (findCatFood(id) != null) {
-                inventory.remove(id);
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i).getId().equals(id)) {
+                inventory.remove(i);
                 return true;
             }
         }
