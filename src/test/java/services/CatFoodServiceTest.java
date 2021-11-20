@@ -34,4 +34,66 @@ public class CatFoodServiceTest {
         Assert.assertEquals(expectedQty, actualQty);
         Assert.assertEquals(expectedPrice, actualPrice);
     }
+
+    @Test
+    public void findCatFoodTest() {
+        //Given
+        Integer expectedId = 1;
+        String expectedBrand = "FancyFeast";
+        String expectedType = "gravy";
+        float expectedWeight = 4;
+        int expectedQty = 24;
+        Double expectedPrice = 18.00;
+
+        //When
+        CatFoodService catFoodService = new CatFoodService();
+        CatFood testCatFood = catFoodService.create(expectedBrand, expectedType,
+                expectedWeight, expectedQty, expectedPrice);
+        CatFood actual = catFoodService.findCatFood(expectedId);
+
+        //Then
+        Assert.assertEquals(testCatFood, actual);
+    }
+
+    @Test
+    public void findAllTest() {
+        //Given
+        CatFoodService catFoodService = new CatFoodService();
+        CatFood purinaFood = catFoodService.create("purina", "wet",
+                2.5f, 12, 12.00);
+        CatFood friskiesFood = catFoodService.create("friskies", "dry",
+                1.8f, 36, 21.00);
+        CatFood iamsFood = catFoodService.create("iams", "grain-free dry",
+                12.4f, 1, 35.50);
+
+        CatFood[] expected = {purinaFood, friskiesFood, iamsFood};
+
+        //When
+        CatFood[] actual = catFoodService.findAll();
+
+        //Then
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    //Why does test not pass when all tests are run?
+    @Test
+    public void deleteTest() {
+        //Given
+        CatFoodService catFoodService = new CatFoodService();
+        CatFood purinaFood = catFoodService.create("purina", "wet",
+                2.5f, 12, 12.00);
+        CatFood friskiesFood = catFoodService.create("friskies", "dry",
+                1.8f, 36, 21.00);
+        CatFood iamsFood = catFoodService.create("iams", "grain-free dry",
+                12.4f, 1, 35.50);
+
+        int id = 2;
+        Boolean expected = true;
+
+        //When
+        Boolean actual = catFoodService.delete(1);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
 }

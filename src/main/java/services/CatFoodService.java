@@ -21,4 +21,27 @@ public class CatFoodService {
         //return new object to caller
         return createdCatFood;
     }
+
+    public CatFood findCatFood(int id) {
+        for (CatFood catFood : inventory) {
+            if (catFood.getId().equals(id)) {
+                return catFood;
+            }
+        }
+        return null;
+    }
+
+    public CatFood[] findAll() {
+        return inventory.toArray(new CatFood[0]);
+    }
+
+    public Boolean delete(int id) {
+        for (CatFood catFood : inventory) {
+            if (catFood.getId().equals(id)) {
+                inventory.remove(catFood);
+                return true;
+            }
+        }
+        return false;
+    }
 }
