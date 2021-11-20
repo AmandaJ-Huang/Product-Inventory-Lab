@@ -88,7 +88,7 @@ public class CatFoodServiceTest {
         Boolean expected = true;
 
         //When
-        Boolean actual = catFoodService.delete(1);
+        Boolean actual = catFoodService.delete(id);
 
         //Then
         Assert.assertEquals(expected, actual);
