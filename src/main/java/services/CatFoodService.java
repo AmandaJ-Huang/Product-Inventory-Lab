@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CatFoodService {
 
-    private static int nextId = 1;
+    private int nextId = 1;
     private List<CatFood> inventory = new ArrayList<>();
 
     public CatFood create(String brand, String type,

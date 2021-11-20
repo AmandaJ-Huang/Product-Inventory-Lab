@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CatToyService {
 
-    private static int nextId = 1;
+    private int nextId = 1;
     private List<CatToys> inventory = new ArrayList<>();
 
     public CatToys create(String type, Character size, Double price) {

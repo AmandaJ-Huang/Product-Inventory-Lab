@@ -2,7 +2,6 @@ package services;
 
 import models.CatToys;
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CatToyServiceTest {
@@ -42,6 +41,18 @@ public class CatToyServiceTest {
     }
 
     @Test
+    public void findCatToyNullTest() {
+        //Given
+        Integer expectedId = 509;
+
+        //When
+        CatToys actual = catToyService.findCatToy(expectedId);
+
+        //Then
+        Assert.assertNull(actual);
+    }
+
+    @Test
     public void findAllTest() {
         //Given
         CatToys tracksToy = catToyService.create("tracks", 'M', 8.79); //4
@@ -57,13 +68,29 @@ public class CatToyServiceTest {
     }
 
     @Test
-    public void deleteTest() {
+    public void deleteTrueTest() {
         //Given
         catToyService.create("tracks", 'M', 8.79); //6
         catToyService.create("mouse", 'S', 1.50); //7
 
-        int id = 6;
+        int id = 2;
         Boolean expected = true;
+
+        //When
+        Boolean actual = catToyService.delete(id);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void deleteFalseTest() {
+        //Given
+        catToyService.create("tracks", 'M', 8.79); //6
+        catToyService.create("mouse", 'S', 1.50); //7
+
+        int id = 10;
+        Boolean expected = false;
 
         //When
         Boolean actual = catToyService.delete(id);
