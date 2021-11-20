@@ -68,4 +68,16 @@ public class CatFood {
     public Integer getId() {
         return this.id;
     }
+
+    public String toString() {
+        return new StringBuilder()
+                .append("Cat Food Details")
+                .append("\nId: " + this.id)
+                .append("\nBrand Name: " + this.brand)
+                .append("\nFood Type: " + this.type)
+                .append("\nWeight: " + this.weight)
+                .append("\nQty: " + this.qty)
+                .append("\nPrice: $" + this.price)
+                .toString();
+    }
 }
