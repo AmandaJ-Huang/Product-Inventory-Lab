@@ -66,9 +66,6 @@ public class Console {
                 print("nmhbu");
                 break;
             case "5":
-                print("good");
-                break;
-            case "6":
                 printGoodbye();
                 break;
             default:
